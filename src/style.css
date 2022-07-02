@@ -1,0 +1,92 @@
+body {
+  font-family: "Bubblegum Sans", cursive;
+  color: #134166;
+}
+.container {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+}
+.navbar-brand {
+  color: #134166;
+}
+.btn-outline-success {
+  color: #134166;
+  border-color: #134166;
+}
+.curLoc {
+  text-align: right;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+.today {
+  text-align: center;
+  margin: 15px;
+  color: #134166;
+}
+.now1 {
+  background-color: #d1e7fd;
+  border-radius: 15px;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+.now {
+  font-size: 48px;
+}
+
+.now2 {
+  background-color: #d3d6da;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 10px;
+}
+.celsius,
+.fahrenheit {
+  color: #134166;
+  font-size: 20px;
+}
+.celsius:hover,
+.fahrenheit:hover {
+  cursor: pointer;
+  color: #134166;
+  font-size: 24px;
+}
+.emojiMain {
+  font-size: 60px;
+}
+.now3 {
+  font-size: 36px;
+}
+.hourly {
+  font-size: 30px;
+}
+.hourly1,
+.hourly2,
+.hourly3,
+.hourly4,
+.hourly5,
+.hourly6 {
+  background-color: #d1e7fd;
+  border-radius: 15px;
+  padding: 10px 0 10px 0;
+}
+.days {
+  font-size: 30px;
+}
+.days1,
+.days2,
+.days3,
+.days4,
+.days5,
+.days6 {
+  background-color: #d3d6da;
+  border-radius: 15px;
+  padding: 10px 0 10px 0;
+}
+.days6 {
+  padding-top: 28px;
+}
+.row {
+  text-align: center;
+}

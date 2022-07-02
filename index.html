@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand">Weather in World</a>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search city" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                
+            </div>
+            <div class="col-8"></div>
+            <div class="col-4 curLoc">
+                <a href="">select current location </a></div> 
+        </nav>
+
+        <div class="today">
+            <h1>Dnipro</h1>
+            <h2 id="dateNow">14 06 2022 </h2>
+            <h2 id="time"> 16:23</h2>
+        </div>
+
+        <div class="row ">
+            <div class="col-6 now1">
+                <span class="now"> <span id="tempCel">25</span> ° <span class="celsius">C</span> | <span
+                        class="fahrenheit">F</span>
+                </span>
+                <br>
+                <span class="emojiMain">🌤</span>
+
+                <br>
+                <small> feels like 26 </small>
+            </div>
+            <div class="col-6 now2">
+                <span id="weekDay"> Tuesday</span> <span id="dateNow"> 14.06.22</span>
+                <br />
+                <span class="now3"> 23&#176C/25&#176C</span>
+                <br /> a few coulds, <br /> winds E at 5 to 10 mph, <br />
+                pop 10%
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 hourly">Hourly</div>
+            <div class="col-2 hourly1">17.00<br> 🌤 <br> 25&#176C</div>
+            <div class="col-2 hourly2">18.00<br> 🌤 <br> 25&#176C</div>
+            <div class="col-2 hourly3">19.00<br> 🌤 <br> 24&#176C</div>
+            <div class="col-2 hourly4">20.00<br> 🌤 <br> 24&#176C</div>
+            <div class="col-2 hourly5">21.00<br> 🌤 <br> 23&#176C</div>
+            <div class="col-2 hourly6">22.00<br> 🌤 <br> 23&#176C</div>
+        </div>
+        <div class="row">
+            <div class="col-12 days">5 days</div>
+            <div class="col-2 days1">15.06 <br /> 🌥 <br /> 25&#176C</div>
+            <div class="col-2 days2">16.06 <br />🌦 <br />25&#176C</div>
+            <div class="col-2 days3">17.06<br /> ☀<br /> 29&#176C</div>
+            <div class="col-2 days4">18.06 <br />☀<br /> 30&#176C</div>
+            <div class="col-2 days5">19.06<br />⛈ <br />29&#176C</div>
+            <div class="col-2 days6">More</div>
+        </div>
+        <br />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="src/index.js"></script>
+</body>
+
+</html>
