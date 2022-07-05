@@ -6,6 +6,9 @@ body {
   background-color: #f8f9fa;
   border-radius: 15px;
 }
+.code {
+ text-align: center;
+}
 .navbar-brand {
   color: #134166;
 }
@@ -28,7 +31,7 @@ body {
   border-radius: 15px;
   text-align: center;
   padding-top: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 .now {
   font-size: 48px;
@@ -39,7 +42,7 @@ body {
   border-radius: 15px;
   text-align: center;
   font-size: 24px;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 .celsius,
 .fahrenheit {
@@ -52,8 +55,9 @@ body {
   color: #134166;
   font-size: 24px;
 }
-.emojiMain {
-  font-size: 60px;
+img {
+  width: 150px;
+  padding-top: -20px;
 }
 .now3 {
   font-size: 36px;
