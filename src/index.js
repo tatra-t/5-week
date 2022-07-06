@@ -68,6 +68,8 @@ function curPosition(position) {
     wind.innerHTML = response.data.wind.speed;
     let humidity = document.querySelector("#humidity");
     humidity.innerHTML = response.data.main.humidity;
+    
+    celsiusTemperature = response.data.main.temp;
   }
   let apiKey = "5bd8dd5876af31be7dd1dd4666c7f2a5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
@@ -154,38 +156,32 @@ function citySearch(event) {
   let apiKey = "5bd8dd5876af31be7dd1dd4666c7f2a5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(timeDate);
+
 }
 let form = document.querySelector(".d-flex");
-form.addEventListener("submit", citySearch)
+form.addEventListener("submit", citySearch);
 
-
-function changeTemp(event) {
-    event.preventDefault();
-    let tempCel = document.querySelector("#tempCel").innerText;
-    let tempCel1 = document.querySelector("#tempCel");
-    let tempFahr = Math.round(tempCel * 1.8 + 32);
-    tempCel1.innerHTML = tempFahr;
-    let celsius = document.querySelector(".celsius");
-    let fahrenheit = document.querySelector(".fahrenheit");
-    celsius.innerHTML = `<span class="celsius"><a href="">C</a></span>`;
-    fahrenheit.innerHTML = `<span class="fahrenheit"> F </span>`;
-
-    function changeTempCel(event) {
-        event.preventDefault();
-        let tempFahr = document.querySelector("#tempCel").innerText;
-        let tempFahr1 = document.querySelector("#tempCel");
-        let tempCel = Math.round((tempFahr - 32) / 1.8);
-        tempFahr1.innerHTML = tempCel;
-        let celsius = document.querySelector(".celsius");
-        let fahrenheit = document.querySelector(".fahrenheit");
-        celsius.innerHTML = `<span class="celsius">C</span>`;
-      fahrenheit.innerHTML = `<span class="fahrenheit"><a href=""> F</a> </span>`;
-    }
-  
-    let cel = document.querySelector(".celsius");
-    cel.addEventListener("click", changeTempCel, false);
+function changeFahrenheit(event) {
+  event.preventDefault();
+  let tempCel = document.querySelector("#tempCel");
+  let tempFahr = Math.round((celsiusTemperature * 1.8) + 32);
+  tempCel.innerHTML = tempFahr;
+  let celsius = document.querySelector(".celsius");
+  let fahrenheit = document.querySelector(".fahrenheit");
+  celsius.innerHTML = `<span class="celsius"><a href="">C</a></span>`;
+  fahrenheit.innerHTML = `<span class="fahrenheit"> F </span>`;
 }
-
-
-let fahr = document.querySelector(".fahrenheit");
-fahr.addEventListener("click", changeTemp);
+function changeCelsius(event) {
+  event.preventDefault();
+  let tempCel = document.querySelector("#tempCel");
+  tempCel.innerHTML = Math.round(celsiusTemperature);
+  let celsius = document.querySelector(".celsius");
+  let fahrenheit = document.querySelector(".fahrenheit");
+  celsius.innerHTML = `<span class="celsius">C</span>`;
+  fahrenheit.innerHTML = `<span class="fahrenheit"><a href=""> F</a> </span>`;
+}
+let celsiusTemperature = null
+let fahrenheitLink = document.querySelector(".fahrenheit");
+fahrenheitLink.addEventListener("click", changeFahrenheit);
+let celsiusLink = document.querySelector(".celsius");
+celsiusLink.addEventListener("click", changeCelsius);
