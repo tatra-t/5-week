@@ -44,14 +44,22 @@ body {
   font-size: 24px;
   padding-top: 20px;
 }
+
+.forecastTempMax {
+  font-size: 28px;
+}
+.forecastIcon {
+  width: 20px;
+  margin: auto;
+}
 .celsius,
 .fahrenheit {
   color: #134166;
   font-size: 30px;
 }
 
-img {
-  width: 150px;
+.imgMain {
+  width: 200px;
   padding-top: -20px;
 }
 .now3 {
@@ -60,12 +68,7 @@ img {
 .hourly {
   font-size: 30px;
 }
-.hourly1,
-.hourly2,
-.hourly3,
-.hourly4,
-.hourly5,
-.hourly6 {
+.hourly1 {
   background-color: #d1e7fd;
   border-radius: 15px;
   padding: 10px 0 10px 0;
@@ -73,19 +76,13 @@ img {
 .days {
   font-size: 30px;
 }
-.days1,
-.days2,
-.days3,
-.days4,
-.days5,
-.days6 {
+.days1 {
   background-color: #d3d6da;
   border-radius: 15px;
-  padding: 10px 0 10px 0;
+  padding-top: 10px;
+  margin: auto;
 }
-.days6 {
-  padding-top: 28px;
-}
+
 .row {
   text-align: center;
 }

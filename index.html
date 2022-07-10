@@ -44,7 +44,7 @@
                         class="fahrenheit"> <a href="">F</a> </span>
                 </span>
                 <br>
-                <img src="" alt="" id="emojiMain">
+                <img class="imgMain" src="" alt="" id="emojiMain">
 
                 <br>
                 <small> feels like <span id="feelLike"> </span>°</small>
@@ -52,30 +52,16 @@
             <div class="col-6 now2">
                 <span id="weekDay"> </span>
                 <br />
-                <span class="now3"> 23&#176C/25&#176C</span>
+                <span class="now3"> <span id="tempCurMax"></span>° / <span id="tempCurMin"></span> ° </span>
                 <br /> <span id="main"> </span>, <br /> Wind <span id="wind"> </span> m/s <br />
                 Humidity <span id="humidity"></span> %
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-12 hourly">Hourly</div>
-            <div class="col-2 hourly1">17.00<br> 🌤 <br> 25&#176C</div>
-            <div class="col-2 hourly2">18.00<br> 🌤 <br> 25&#176C</div>
-            <div class="col-2 hourly3">19.00<br> 🌤 <br> 24&#176C</div>
-            <div class="col-2 hourly4">20.00<br> 🌤 <br> 24&#176C</div>
-            <div class="col-2 hourly5">21.00<br> 🌤 <br> 23&#176C</div>
-            <div class="col-2 hourly6">22.00<br> 🌤 <br> 23&#176C</div>
-        </div>
-        <div class="row">
-            <div class="col-12 days">5 days</div>
-            <div class="col-2 days1">15.06 <br /> 🌥 <br /> 25&#176C</div>
-            <div class="col-2 days2">16.06 <br />🌦 <br />25&#176C</div>
-            <div class="col-2 days3">17.06<br /> ☀<br /> 29&#176C</div>
-            <div class="col-2 days4">18.06 <br />☀<br /> 30&#176C</div>
-            <div class="col-2 days5">19.06<br />⛈ <br />29&#176C</div>
-            <div class="col-2 days6">More</div>
-        </div>
+        <div class="col-12 hourly">Hourly</div>
+        <div class="row" id="forecastHour"></div>
+        
+        <div class="col-12 days">Daily</div>
+        <div class="row" id= "forecastDay"> </div>
         <br />
     </div>
     <a href="https://github.com/tatra-t/5-week">Open-source code</a> by Tetiana Dushenko
