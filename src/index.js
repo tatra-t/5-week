@@ -1,9 +1,34 @@
+//function changeFahrenheit(event) {
+  //event.preventDefault()
+  //let tempCel = document.querySelector("#tempCel");
+  //let tempFahr = Math.round((celsiusTemperature * 1.8) + 32);
+  //tempCel.innerHTML = tempFahr;
+  //let celsius = document.querySelector(".celsius");
+  //let fahrenheit = document.querySelector(".fahrenheit");
+  //celsius.innerHTML = `<span class="celsius"><a href="">C</a></span>`;
+  //fahrenheit.innerHTML = `<span class="fahrenheit"> F </span>`;
+//}
+//function changeCelsius(event) {
+  //event.preventDefault();
+  //let tempCel = document.querySelector("#tempCel");
+  //tempCel.innerHTML = Math.round(celsiusTemperature);
+  //let celsius = document.querySelector(".celsius");
+  //let fahrenheit = document.querySelector(".fahrenheit");
+  //celsius.innerHTML = `<span class="celsius">C</span>`;
+  //fahrenheit.innerHTML = `<span class="fahrenheit"><a href=""> F</a> </span>`;
+//}
+
+
+//let celsiusTemperature = null
+//let fahrenheitLink = document.querySelector(".fahrenheit");
+//fahrenheitLink.addEventListener("click", changeFahrenheit);
+//let celsiusLink = document.querySelector(".celsius");
+//celsiusLink.addEventListener("click", changeCelsius);
 
 function curPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   console.log(lat, lon);
-
   let apiKey = "5bd8dd5876af31be7dd1dd4666c7f2a5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(timeDate);
@@ -106,30 +131,6 @@ function timeDate(response) {
     getForecast(response.data.coord)
   }
 
-function changeFahrenheit(event) {
-  event.preventDefault();
-  let tempCel = document.querySelector("#tempCel");
-  let tempFahr = Math.round((celsiusTemperature * 1.8) + 32);
-  tempCel.innerHTML = tempFahr;
-  let celsius = document.querySelector(".celsius");
-  let fahrenheit = document.querySelector(".fahrenheit");
-  celsius.innerHTML = `<span class="celsius"><a href="">C</a></span>`;
-  fahrenheit.innerHTML = `<span class="fahrenheit"> F </span>`;
-}
-function changeCelsius(event) {
-  event.preventDefault();
-  let tempCel = document.querySelector("#tempCel");
-  tempCel.innerHTML = Math.round(celsiusTemperature);
-  let celsius = document.querySelector(".celsius");
-  let fahrenheit = document.querySelector(".fahrenheit");
-  celsius.innerHTML = `<span class="celsius">C</span>`;
-  fahrenheit.innerHTML = `<span class="fahrenheit"><a href=""> F</a> </span>`;
-}
-let celsiusTemperature = null
-let fahrenheitLink = document.querySelector(".fahrenheit");
-fahrenheitLink.addEventListener("click", changeFahrenheit);
-let celsiusLink = document.querySelector(".celsius");
-celsiusLink.addEventListener("click", changeCelsius);
 
 function getForecast(coordinates) {
   console.log(coordinates);
@@ -179,7 +180,8 @@ function displayForecast(response) {
       forecastHTML = forecastHTML + `
       <div class="col-2 days1">
         <div class="forecastDate">${formatDay(forecastDay.dt)}.${formatDay1(forecastDay.dt)} </div>
-          <div class="forecastIcon"> 
+        <hr>  
+        <div class="forecastIcon"> 
             <img  src = "http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
             alt = "" width = 50/>
           </div>
@@ -196,17 +198,17 @@ function displayForecast(response) {
   
   let forecastHourly = response.data.hourly;
   let forecastElementHourly = document.querySelector("#forecastHour");
-  let forecastHourHTML = `<div class="row">`;
+  let forecastHourHTML = `<div class="row ">`;
   forecastHourly.forEach(function(forecastHour, index) {
-    if (index > 0 && index < 13) {
+    if (index > 0 && index < 7) {
       forecastHourHTML = forecastHourHTML + `
       <div class="col-2 hourly1">
-      <div class="forecastHour"> ${formatHour(forecastHour.dt)}.00 </div>
-      <div class="forecastHourIcon"> 
-      <img  src = "http://openweathermap.org/img/wn/${forecastHour.weather[0].icon}@2x.png"
-          alt = "" width = 50
-      />
-      </div>
+        <div class="forecastHour"> ${formatHour(forecastHour.dt)}.00 </div>
+        <hr >  
+        <div class="forecastHourIcon"> 
+            <img  src = "http://openweathermap.org/img/wn/${forecastHour.weather[0].icon}@2x.png"
+            alt = "" width = 50/>
+          </div>
         <div class="forecastHourTemp">
           <span class="forecastTemp"> ${Math.round(forecastHour.temp)}°</span>
         </div> 

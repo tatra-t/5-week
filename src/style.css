@@ -42,16 +42,13 @@ body {
   border-radius: 15px;
   text-align: center;
   font-size: 24px;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .forecastTempMax {
   font-size: 28px;
 }
-.forecastIcon {
-  width: 20px;
-  margin: auto;
-}
+
 .celsius,
 .fahrenheit {
   color: #134166;
@@ -59,8 +56,7 @@ body {
 }
 
 .imgMain {
-  width: 200px;
-  padding-top: -20px;
+  width: 150px;
 }
 .now3 {
   font-size: 36px;
@@ -71,7 +67,8 @@ body {
 .hourly1 {
   background-color: #d1e7fd;
   border-radius: 15px;
-  padding: 10px 0 10px 0;
+  padding-top:10px;
+  margin: auto;
 }
 .days {
   font-size: 30px;
